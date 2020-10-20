@@ -1,0 +1,3970 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"
+        ,http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <link rel="stylesheet" href="E:\vs code\font-awesome-4.7.0\css\font-awesome.css">
+    <title>慕课网</title>
+</head>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+<Script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+
+            if ($(document).scrollTop() <= 0) {
+                $("#header").removeClass("fix_header");
+            }
+
+            if ($(document).scrollTop() > 0) {
+                $("#header").addClass("fix_header");
+            }
+        });
+
+        let imgs = $("#imglist img");
+        $("#imglist").css({ "width": imgs.length * 936 });
+        console.log(imgs)
+        console.log(imgs.length * 936)
+    });
+</Script>
+<style>
+    /* 头部 */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    #header {
+        height: 72px;
+        padding-left: 4px;
+        background-color: #fff;
+        z-index: 5;
+    }
+
+    li {
+        float: left;
+        list-style: none;
+    }
+
+    .logo {
+        float: left;
+        height: 72px;
+        width: 140px;
+    }
+
+    .kecheng {
+        float: left;
+        margin-left: 10px;
+    }
+
+    .kecheng a {
+        /* display:block;
+       float: left;
+       height: 72px; 
+       padding: 0 20px;
+       text-align: center;
+       position: relative; */
+        padding: 0 20px;
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        height: 72px;
+        line-height: 72px;
+        position: relative;
+        color: #787d82;
+    }
+
+    .kecheng a:hover {
+        background-color: #eeeeee;
+    }
+
+    .sousuo a:hover {
+        color: orange;
+    }
+
+    .APP a {
+        padding: 0 10px;
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        height: 36px;
+        line-height: 72px;
+        position: relative;
+        color: #787d82;
+    }
+
+    .APP a:hover {
+        color: orange;
+    }
+
+    .sousuo {
+        float: left;
+        height: 72px;
+        width: 280px;
+        line-height: 72px;
+        position: relative;
+    }
+
+    .sousuo input {
+        display: block;
+        overflow: hidden;
+        margin-top: 19px;
+        height: 34px;
+        width: 100%;
+        border: none;
+        border-radius: 10px;
+        background-color: #eee;
+        color: #999;
+        font-size: 14px;
+    }
+
+    .sousuo a {
+        float: left;
+        padding-left: 5px;
+        color: #787d82;
+    }
+
+    text {
+        padding: 10px 0;
+        padding-left: 10px;
+        float: left;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .kecheng a {
+            padding: 0 5px !important
+        }
+
+        .fix_header .sousuo {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 1300px) {
+        .kecheng a {
+            padding: 0 10px !important
+        }
+    }
+
+    .search {
+        float: left;
+        position: absolute;
+        top: 0;
+        left: 260px
+    }
+
+    .gouwuche {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        line-height: 72px;
+        color: #787d82;
+        border: 1px solid #D9DDE1 !important;
+        border-radius: 30px;
+        margin: 18px 10px;
+
+    }
+
+    .fix_header {
+        position: fixed;
+        width: 100%;
+    }
+
+    /* 导航栏 */
+    #daohang a {
+        float: left;
+    }
+
+    .fenlei {
+        float: left;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .fenlei li {
+        display: inline-block;
+        width: 200px;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 16px;
+    }
+
+    .fenlei li a {
+        display: inline-block;
+        width: 200px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        padding-left: 5px;
+        ;
+    }
+
+    .fenlei li a i {
+        float: right;
+        text-align: center;
+        line-height: 50px;
+        color: rgba(255, 255, 255, 0.6);
+        padding-right: 10px;
+    }
+
+    .fenlei li a span {
+        float: left;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .imglist {
+        /* width: 5616px; */
+        list-style: none;
+        position: absolute;
+        left: -936px;
+
+    }
+
+    .imglist img {
+        float: left;
+        width: 936px;
+        height: 382px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .imglist li {
+        float: left;
+    }
+
+    /* .prev{
+        position: absolute;
+        padding-left: 5px;
+        top: 50%;
+        width: 48px;
+        height: 48px;
+        background: rgba(28, 31, 33, 0.1);
+        border-radius: 50%;
+        line-height: 48px;
+        font-size: 20px;
+        color: #FFFFFF;
+        text-align: center;
+    }
+    .next{
+        position: absolute;
+        top: 50%;
+        width: 48px;
+        height: 48px;
+        background: rgba(28, 31, 33, 0.1);
+        border-radius: 50%;
+        line-height: 48px;
+        font-size: 20px;
+        color: #FFFFFF;
+        text-align: center;
+    } */
+    .fenlei li a:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .Nav-DIV {
+        position: absolute;
+        bottom: 20px;
+        right: 10px;
+    }
+
+    .Nav-DIV a {
+        float: left;
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        background-color: #2b333b;
+    }
+
+    .Nav-DIV a:hover {
+        background-color: #ffffff;
+    }
+
+    /* 零基础就业 */
+    #redian i {
+        float: left;
+        width: 50px;
+        height: 50px;
+        background: url(images/path-2019-9.png) no-repeat;
+        background-size: 100%;
+        margin-left: 16px;
+        margin-right: 12px;
+    }
+
+    #redian .java {
+        background-position: center -50px
+    }
+
+    #redian .Python {
+        background-position: center -100px
+    }
+
+    #redian .dashuju {
+        float: left;
+        width: 50px;
+        height: 50px;
+        background: url(images/bigdata.png) no-repeat;
+        background-size: 100%;
+        margin-left: 16px;
+        margin-right: 12px;
+    }
+
+    .one {
+        float: left;
+        font-size: 0;
+        display: block;
+        width: 270px;
+        padding-top: 20px;
+        box-sizing: border-box;
+        height: 90px;
+        overflow: hidden;
+        transition: all .3s;
+        background: #F3F5F6;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .other {
+        float: left;
+        font-size: 0;
+        margin-left: 24px;
+        display: block;
+        width: 270px;
+        padding-top: 20px;
+        box-sizing: border-box;
+        height: 90px;
+        overflow: hidden;
+        transition: all .3s;
+        background: #F3F5F6;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    .label {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 48px;
+        height: 18px;
+        background-image: url(images/class_2020.png);
+        background-size: cover;
+        background-position: center center;
+    }
+
+    /* 职场经验 */
+    .jinjie {
+        float: left;
+        width: 270px;
+        height: 90px;
+        margin-right: 24px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .biaoqian {
+        position: absolute;
+        border: 2px solid #FFFFFF;
+        border-radius: 12px;
+        top: 28px;
+        left: 16px;
+        z-index: 4;
+        font-family: 'dincondm';
+        font-size: 12px;
+        color: #ffffff;
+        line-height: 20px;
+        padding: 0 8px;
+        background-color: #FFAA00;
+    }
+
+    .fucitiao {
+        position: absolute;
+        bottom: 6px;
+        left: 8px;
+        font-size: 12px;
+        color: #FFFFFF;
+        line-height: 16px;
+    }
+
+    .fucitiao label {
+        display: inline-block;
+        background: rgba(28, 31, 33, 0.6);
+        border-radius: 4px;
+        padding: 4px 8px;
+        margin-right: 4px;
+        margin-bottom: 2px;
+        margin-right: 0px;
+        font-weight: 200;
+    }
+
+    /* 新上好课 */
+    #xinke .vue a h3:hover {
+        color: #FFAA00 !important;
+    }
+
+    /* 学习路线 */
+    #xuexi {
+        box-shadow: 0 2px 8px 0 rgba(7, 17, 27, 0.06);
+    }
+
+    .xuexi {
+        width: 1152px;
+        margin: auto;
+        width: 1152px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        padding: 36px 0 38px;
+        clear: both;
+    }
+
+    .xuexi h3,
+    .remen h3 {
+        float: left;
+        font-weight: 400;
+        width: 1152px;
+        height: 32px;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    .weixinkecheng {
+        display: block;
+        height: 516px;
+        width: 1172px;
+    }
+
+    .xuexi h3 ul li,
+    .remen h3 ul li {
+        margin: 0 14px;
+        float: left;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 30px;
+        cursor: pointer
+    }
+
+    .images-up {
+        left: 0px;
+        top: 0;
+        width: 140px;
+        height: 140px;
+        z-index: 3;
+        margin: 0 auto;
+        position: absolute;
+        border-radius: 8px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .images-mid {
+        top: 0;
+        left: 2px;
+        width: 132px;
+        height: 140px;
+        opacity: 0.4;
+        z-index: 2;
+        margin: 0 auto;
+        position: absolute;
+        border-radius: 8px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .images-down {
+        top: 0;
+        left: 4px;
+        width: 124px;
+        height: 140px;
+        opacity: 0.2;
+        z-index: 1;
+        margin: 0 auto;
+        position: absolute;
+        border-radius: 8px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .weixinkecheng div a h4 {
+        margin: 8px 0;
+        margin-left: 164px;
+        font-size: 16px;
+        color: #1C1F21;
+        line-height: 20px;
+        min-height: 20px;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .weixinkecheng div a p {
+        margin-left: 164px;
+        font-size: 14px;
+        color: #545C63;
+        letter-spacing: 0;
+        line-height: 20px;
+        height: 60px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .weixinkecheng div a:hover h4 {
+        color: red;
+    }
+
+    .img {
+        float: left;
+        position: relative;
+        transition: all .3s;
+        width: 140px;
+        height: 140px;
+        background-color: #f3f5f7;
+        border-radius: 8px;
+    }
+
+    .img:hover .images-up {
+        top: -4px;
+        left: 0px;
+    }
+
+    .img:hover .images-mid {
+        top: 0px;
+        left: 2px;
+        width: 132px
+    }
+
+    .img:hover .images-down {
+        top: 4px;
+        left: 4px;
+        width: 124px;
+    }
+
+    .img .images-down,
+    .img .images-mid,
+    .img .images-up {
+        transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -o-transition: all 0.3s;
+    }
+
+    .xuexi ul li:hover {
+        color: red
+    }
+
+    /* 热门课程 */
+    .remen {
+        width: 1152px;
+        height: 690px;
+        margin: auto;
+        width: 1152px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        padding: 36px 0 38px;
+        clear: both;
+    }
+
+    .remen .yemian1 a:hover h3 {
+        color: #FFAA00 !important;
+    }
+    .remen h3 ul li:hover{
+        color: red;
+    }
+    /* 慕课专栏 */
+    .muke{
+        width: 1152px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        padding: 36px 0 38px;
+    }
+    .muke .mukecheng{
+        margin-left: -24px;
+        margin-top: 24px;
+        height: 468px;
+    }
+    .mukecheng-book {
+        float: left;
+        padding: 17px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        width: 332px;
+        height: 170px;
+    }
+    .mukecheng-book div a div{
+        font-size: 12px;
+        color:blue;
+        margin-top: 5px;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: 34px auto;
+        background-position: center;
+        width: 30px;
+        height: 20px;
+    }
+    .mukecheng-book h4{
+        margin-left: 112px;
+        font-size: 14px;
+        line-height: 22px;
+        height: 44px;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    /* .mukecheng-book:hover{
+        border:1px solid rgba(0,0,0,0.1);
+    } */
+    .yejiao a{
+        display: inline-block;
+        margin: 0 10px;
+        color: #99a1a6;
+        line-height: 28px;
+    }
+    .yejiao a:hover{
+        color: black;
+    }
+    .beian{
+        background: url(images/beianicon.png) no-repeat 0 0;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 4px;
+        margin-top: -4px;
+        color: #93999F;
+        font-size: 12px;
+        font-style: italic;
+        line-height: 28px;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var index = 0;
+        var allA = document.querySelectorAll(".Nav-DIV a");
+        for (var i = 0; i < allA.length; i++) {
+            // 添加NUM属性
+            allA[i].num = i;
+            // 绑定点击事件
+            allA[i].onclick = function () {
+                // 获取点击超链接的索引
+                index = this.num;
+                imglist.style.left = -936 * index + "px";
+            }
+        }
+    }
+</script>
+<!-- <script language="javascript" type="text/javascript"> 
+    function leftTimer(year,month,day,hour,minute,second){ 
+        console.log(123)
+     var leftTime = (new Date(year,month-1,day,hour,minute,second)) - (new Date()); //计算剩余的毫秒数 
+     var days = parseInt(leftTime / 1000 / 60 / 60 / 24 , 10); //计算剩余的天数 
+     var hours = parseInt(leftTime / 1000 / 60 / 60 % 24 , 10); //计算剩余的小时 
+     var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟 
+     var seconds = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数 
+     days = checkTime(days); 
+     hours = checkTime(hours); 
+     minutes = checkTime(minutes); 
+     seconds = checkTime(seconds); 
+     setInterval("leftTimer(2020,11,11,11,11,11)",1000); 
+     document.getElementById("timer").innerHTML = days+"天" + hours+"小时" + minutes+"分"+seconds+"秒"; 
+    } 
+    function checkTime(i){ //将0-9的数字前面加上0，例1变为01 
+     if(i<10) 
+     { 
+     i = "0" + i; 
+     } 
+     return i; 
+    }
+</script> -->
+<script>
+
+    var SysSecond;
+    var InterValObj;
+
+    $(document).ready(function () {
+        SysSecond = parseInt($("#remainSeconds").html()); //这里获取倒计时的起始时间
+        InterValObj = window.setInterval(SetRemainTime, 1000); //间隔函数，1秒执行
+    });
+
+    //将时间减去1秒，计算天、时、分、秒
+    function SetRemainTime() {
+        if (SysSecond > 0) {
+            SysSecond = SysSecond - 1;
+            var second = Math.floor(SysSecond % 60);            // 计算秒     
+            var minite = Math.floor((SysSecond / 60) % 60);      //计算分 
+            var hour = Math.floor((SysSecond / 3600) % 24);      //计算小时
+            var day = Math.floor((SysSecond / 3600) / 24);       //计算天 
+
+            var hourDiv = "<span id='hourSpan'>" + hour + "小时" + "</span>";
+            var dayDiv = "<span id='daySpan'>" + day + "天" + "</span>";
+
+            $("#remainTime").html(dayDiv + hourDiv + minite + "分" + second + "秒");
+
+            if (hour === 0) {//当不足1小时时隐藏小时
+                $('#hourSpan').css('display', 'none');
+            }
+            if (day === 0) {//当不足1天时隐藏天
+                $('#daySpan').css('display', 'none');
+            }
+
+        } else {//剩余时间小于或等于0的时候，就停止间隔函数
+            window.clearInterval(InterValObj);
+            $('#remainSeconds').css('display', 'none')
+        }
+    }
+
+</script>
+<script>
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            $("#hot").css("display", "block");
+            $("#qianduan").css("display", "none");
+            $("#houduan").css("display", "none");
+            $("#yidong").css("display", "none");
+            $("#jisuanji").css("display", "none");
+            $("#data").css("display", "none");
+            $("#ceshi").css("display", "none");
+            $("#AI").css("display", "none");
+        });
+        $("#btn2").click(function () {
+            $("#hot").css("display", "none");
+            $("#qianduan").css("display", "block");
+            $("#houduan").css("display", "none");
+            $("#yidong").css("display", "none");
+            $("#jisuanji").css("display", "none");
+            $("#data").css("display", "none");
+            $("#ceshi").css("display", "none");
+            $("#AI").css("display", "none");
+        });
+        $("#btn3").click(function () {
+            $("#hot").css("display", "none");
+            $("#qianduan").css("display", "none");
+            $("#houduan").css("display", "block");
+            $("#yidong").css("display", "none");
+            $("#jisuanji").css("display", "none");
+            $("#data").css("display", "none");
+            $("#ceshi").css("display", "none");
+            $("#AI").css("display", "none");
+        });
+        $("#btn4").click(function () {
+            $("#hot").css("display", "none");
+            $("#qianduan").css("display", "none");
+            $("#houduan").css("display", "none");
+            $("#yidong").css("display", "block");
+            $("#jisuanji").css("display", "none");
+            $("#data").css("display", "none");
+            $("#ceshi").css("display", "none");
+            $("#AI").css("display", "none");
+        });
+        $("#btn5").click(function () {
+            $("#hot").css("display", "none");
+            $("#qianduan").css("display", "none");
+            $("#houduan").css("display", "none");
+            $("#yidong").css("display", "none");
+            $("#jisuanji").css("display", "block");
+            $("#data").css("display", "none");
+            $("#ceshi").css("display", "none");
+            $("#AI").css("display", "none");
+        });
+        $("#btn6").click(function () {
+            $("#hot").css("display", "none");
+            $("#qianduan").css("display", "none");
+            $("#houduan").css("display", "none");
+            $("#yidong").css("display", "none");
+            $("#jisuanji").css("display", "none");
+            $("#data").css("display", "block");
+            $("#ceshi").css("display", "none");
+            $("#AI").css("display", "none");
+        });
+        $("#btn7").click(function () {
+            $("#hot").css("display", "none");
+            $("#qianduan").css("display", "none");
+            $("#houduan").css("display", "none");
+            $("#yidong").css("display", "none");
+            $("#jisuanji").css("display", "none");
+            $("#data").css("display", "none");
+            $("#ceshi").css("display", "block");
+            $("#AI").css("display", "none");
+        });
+        $("#btn8").click(function () {
+            $("#hot").css("display", "none");
+            $("#qianduan").css("display", "none");
+            $("#houduan").css("display", "none");
+            $("#yidong").css("display", "none");
+            $("#jisuanji").css("display", "none");
+            $("#data").css("display", "none");
+            $("#ceshi").css("display", "none");
+            $("#AI").css("display", "block");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#btu1").click(function () {
+            $("#yemian1").css("display", "block");
+            $("#yemian2").css("display", "none");
+        })
+        $("#btu2").click(function () {
+            $("#yemian1").css("display", "none");
+            $("#yemian2").css("display", "block");
+        })
+    })
+</script>
+
+<body style="margin:0;height: 100%;width:100%;min-width: 1200px;">
+    <!-- 网页头部 -->
+    <div id="header">
+        <div class="logo">
+            <a href="#" target="_self" title="慕课网" style="float:left">
+                <img src="images/logo-recommended.png" alt="慕课网首页" style="height: 72px; width: 126px;margin:0px;">
+            </a>
+        </div>
+        <ul class="kecheng" style="margin-right: 20px;">
+            <li><a href="#">免费课程</a></li>
+            <li><a href="#">实战课程</a></li>
+            <li><a href="#">金职位</a></li>
+            <li><a href="#">慕课教程</a></li>
+            <li><a href="#">专栏</a></li>
+            <li><a href="#">手记</a></li>
+        </ul>
+        <div class="sousuo " id="sousuo">
+            <div>
+                <input type="text" placeholder="请输入关键字..." style="padding-left:10px;">
+                <div style="float:left;">
+                    <a href="#" style="position: absolute; top:0;left:140px;">Vue</a>
+                    <a href="#" style="position: absolute; top:0;left:180px;">Python</a>
+                </div>
+            </div>
+            <div class="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="APP" style="height: 72px;float:right;">
+            <ul style="float:left;">
+                <li style="float:left;">
+                    <a href="#" style="float:left;height: 72px;">
+                        下载APP
+                    </a>
+                </li>
+                <li style="float:left;">
+                    <a href="#" class="gouwuche">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span style="margin-left: 2px;">购物车</span>
+                    </a>
+                </li>
+                <li style="float:left;">
+                    <a href="#" style="display:inline-block;height: 72px;">登录</a>
+                    /
+                    <a href="#" style="display:inline-block;height: 72px;">注册</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <div id="daohang" style="height: 400px;background-color: #fff;">
+        <div style="height: 382px;width: 1152px;margin:auto;padding-top:18px;">
+            <ul class="fenlei" style=" width: 216px;height: 382px;display:inline-block ;background-color: #2b333b;">
+                <li style="padding-top: 20px;">
+                    <a href="#">
+                        <span>前沿 / 区块链 / 人工智能</span>
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li><a href="#">
+                        <span>前端 / 小程序 / JS</span>
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>后端 / JAVA / Python</span>
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>移动 / Android / iOS</span>
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>云计算 / 大数据 / 容器</span>
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>运维 / 测试 / 数据库</span>
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>UI设计 / 3D动画 / 游戏</span>
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+            <div style="height: 382px;width: 936px;float: left; position: relative;overflow: hidden;">
+                <ul class="imglist" id="imglist">
+                    <li>
+                        <a target="_blank" href="#" class="a">
+                            <img src="images/1.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#" class="b">
+                            <img src="images/2.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#" class="c">
+                            <img src="images/3.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#" class="d">
+                            <img src="images/4.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#" class="e">
+                            <img src="images/5.jpg">
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="#" class="f">
+                            <img src="images/6.jpg">
+                        </a>
+                    </li>
+
+                    <!-- <button class="prev">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button class="next">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </button> -->
+                </ul>
+                <div class="Nav-DIV">
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 0基础课程 -->
+    <div id="redian" style="height: 171px;padding-top: 19px;background-color:#F3F5F6;">
+        <div style="width: 1152px;margin: auto;">
+            <h3 style="height: 32px;">
+                <span style="position: relative;
+                font-size: 24px;
+                color: #1C1F21;
+                letter-spacing: 0px;
+                line-height: 32px;">零基础就业</span>
+                <span style="margin-top: 6px;
+                margin-left: 12px;
+                font-weight: normal;
+                font-size: 14px;
+                color: #545C63;
+                line-height: 20px;">从入门到具有一年开发经验</span>
+            </h3>
+            <div style="height: 100px;margin-top: 20px;">
+                <a href="#" class="one">
+                    <i class="java"></i>
+                    <p style="font-size: 18px;
+                    font-weight: bold;
+                    color: #1C1F21;
+                    margin-top: 0px;">JAVA工程师体系课</p>
+                    <p style="font-size: 14px;
+                    color: #1C1F21;
+                    line-height: 16px;
+                    margin-top: 5px;
+                    font-weight: 400;">从0到胜任大场java职位</p>
+                    <div class="label"></div>
+                </a>
+                <a href="#" class="other">
+                    <i class="html"></i>
+                    <p style="font-size: 18px;
+                    font-weight: bold;
+                    color: #1C1F21;
+                    margin-top: 0px;">前端工程师体系课</p>
+                    <p style="font-size: 14px;
+                    color: #1C1F21;
+                    line-height: 16px;
+                    margin-top: 5px;
+                    font-weight: 400;">从0到前端全全栈开发</p>
+                    <div class="label"></div>
+                </a>
+                <a href="#" class="other">
+                    <i class="Python"></i>
+                    <p style="font-size: 18px;
+                    font-weight: bold;
+                    color: #1C1F21;
+                    margin-top: 0px;">Python工程师体系课</p>
+                    <p style="font-size: 14px;
+                    color: #1C1F21;
+                    line-height: 16px;
+                    margin-top: 5px;
+                    font-weight: 400;">从0到Python全栈开发</p>
+                    <div class="label"></div>
+                </a>
+                <a href="#" class="other">
+                    <i class="dashuju"></i>
+                    <p style="font-size: 18px;
+                    font-weight: bold;
+                    color: #1C1F21;
+                    margin-top: 0px;">大数据工程师体系课</p>
+                    <p style="font-size: 14px;
+                    color: #1C1F21;
+                    line-height: 16px;
+                    margin-top: 5px;
+                    font-weight: 400;">抢占高新“大”机遇</p>
+                    <div></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 职场课程 -->
+    <div id="zhichang" style="height: 171px;padding-top: 19px;background-color: #fff;">
+        <div style="width: 1152px;margin: auto;">
+            <div style="width: 1152px;margin: auto;">
+                <h3 style="height: 32px;">
+                    <span style="position: relative;
+                    font-size: 24px;
+                    color: #1C1F21;
+                    letter-spacing: 0px;
+                    line-height: 32px;">职场提升</span>
+                    <span style="margin-top: 6px;
+                    margin-left: 12px;
+                    font-weight: normal;
+                    font-size: 14px;
+                    color: #545C63;
+                    line-height: 20px;">1年以上开发经验系统成长</span>
+                </h3>
+            </div>
+            <div style="height: 100px;margin-top: 20px;">
+                <a href="#" class="tishenga">
+                    <div class="jinjie" style="background-image: url(images/index_javaarchitect.png);"></div>
+                </a>
+                <a href="#" class="tishenga">
+                    <div class="jinjie" style="background-image: url(images/index_webfullstack.png);"></div>
+                </a>
+                <a href="#" class="tishenga">
+                    <div class="jinjie" style="background-image: url(images/index_javafullstack.png);"></div>
+                </a>
+                <a href="#" class="tishenga">
+                    <div class="jinjie" style="background-image: url(images/index_dataanalysis.png);margin-right: 0;">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 新上好课 -->
+    <div id="xinke" style="height: 690px;background-color: #F3F5F6;">
+        <h3 style="height: 32px;width: 1152px;margin: auto;padding-top: 20px;padding-bottom: 20px;">
+            <span style="position: relative;
+            font-size: 24px;
+            color: #1C1F21;
+            letter-spacing: 0px;
+            line-height: 32px;
+            padding-top:  20px;">新上好课</span>
+        </h3>
+        <div class="vue" style="width: 1152px;margin: auto;">
+            <div style="float: left; width: 270px;height: 268px;position: relative;border-radius: 8px;padding-top: 20px;">
+                <a href="#">
+                    <div class="biaoqian" style="left: -8px;">新课</div>
+                    <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                        <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                        <div class="fucitiao">
+                            <label>Vue.js</label>
+                            <label>Typescript</label>
+                        </div>
+                    </div>
+                    <div style="padding: 8px;background-size: cover;">
+                        <h3 style="font-size: 16px;
+                        color: #07111B;
+                        line-height: 24px;
+                        overflow: hidden;
+                        font-weight: bold;
+                        height: 46px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                        <div style="position: relative">
+                            <div
+                                style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                <span style="padding-right: 10px;">中级</span>
+                                <span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    547
+                                </span>
+                                <span style="float:right ;margin-right: 12px;">11人评价</span>
+                            </div>
+                            <div></div>
+                            <div style="color: #f01414;font-weight: bold;">
+                                ￥298.00
+                                <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                    限时特惠
+                                    <div id="remainSeconds" style="display: none;">235254</div>
+                                    <i id="remainTime" style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div
+                style="float: left; width: 270px;height: 268px;position: relative;border-radius: 8px;padding-left: 24px;padding-top: 20px;">
+                <a href="#">
+                    <div class="biaoqian" style="background-color: rebeccapurple;">升级</div>
+                    <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                        <img src="images/5f3c866608d7a4e706000338-360-202.jpg" style="width: 270px;height: 148px;">
+                        <div class="fucitiao">
+                            <label>Javascript</label>
+                            <label>小程序</label>
+                        </div>
+                    </div>
+                    <div style="padding: 8px;background-size: cover;">
+                        <h3 style="font-size: 16px;
+                        color: #07111B;
+                        line-height: 24px;
+                        overflow: hidden;
+                        font-weight: bold;
+                        height: 46px;">微信小程序入门与实践-2020全新版</h3>
+                        <div style="position: relative">
+                            <div
+                                style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                <span style="padding-right: 10px;">初级</span>
+                                <span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    20820
+                                </span>
+                                <span style="float:right ;margin-right: 12px;">6683人评价</span>
+                            </div>
+                            <div></div>
+                            <div style="color: #f01414;font-weight: bold;">
+                                ￥149.00
+                                <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                    限时特惠
+                                    <div id="remainSeconds" style="display: none;">235254</div>
+                                    <i id="remainTime"  style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                </span> -->
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div
+                style="float: left; width: 270px;height: 268px;position: relative;border-radius: 8px;padding-left: 24px;padding-top: 20px;">
+                <a href="#">
+                    <!-- <div class="biaoqian">新课</div> -->
+                    <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                        <img src="images/5e98339809ac343012000676-360-202.png" style="width: 270px;height: 148px;">
+                        <div class="fucitiao">
+                            <label>Vue.js</label>
+                            <label>小程序</label>
+                        </div>
+                    </div>
+                    <div style="padding: 8px;background-size: cover;">
+                        <h3 style="font-size: 16px;
+                        color: #07111B;
+                        line-height: 24px;
+                        overflow: hidden;
+                        font-weight: bold;
+                        height: 46px;">uni-app入门到实战 以项目为导向 掌握完整开发流程 </h3>
+                        <div style="position: relative">
+                            <div
+                                style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                <span style="padding-right: 10px;">入门</span>
+                                <span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    599
+                                </span>
+                                <span style="float:right ;margin-right: 12px;">280人评价</span>
+                            </div>
+                            <div></div>
+                            <div style="color: #f01414;font-weight: bold;">
+                                ￥348.00
+                                <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                    限时特惠
+                                    <div id="remainSeconds" style="display: none;">235254</div>
+                                    <i id="remainTime"  style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                </span> -->
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div
+                style="float: left; width: 270px;height: 268px;position: relative;border-radius: 8px;padding-left: 24px;padding-top: 20px;">
+                <a href="#">
+                    <div class="biaoqian" style="background-color: rebeccapurple;">升级</div>
+                    <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                        <img src="images/5e8d3f4a08c81ed506000338-360-202.jpg" style="width: 270px;height: 148px;">
+                        <div class="fucitiao">
+                            <label>Vue.js</label>
+                            <label>Typescript</label>
+                        </div>
+                    </div>
+                    <div style="padding: 8px;background-size: cover;">
+                        <h3 style="font-size: 16px;
+                        color: #07111B;
+                        line-height: 24px;
+                        overflow: hidden;
+                        font-weight: bold;
+                        height: 46px;">Spring Cloud + Vue 前后端分离 开发企业级在线视频课程系统</h3>
+                        <div style="position: relative">
+                            <div
+                                style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                <span style="padding-right: 10px;">初级</span>
+                                <span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    752
+                                </span>
+                                <span style="float:right ;margin-right: 12px;">362人评价</span>
+                            </div>
+                            <div></div>
+                            <div style="color: #f01414;font-weight: bold;">
+                                ￥388.00
+                                <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                    限时特惠
+                                    <div id="remainSeconds" style="display: none;">235254</div>
+                                    <i id="remainTime"  style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                </span> -->
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div
+                style="float: left; width: 270px;height: 268px;position: relative;border-radius: 8px;padding-top: 20px;">
+                <a href="#">
+                    <div class="biaoqian" style="left: -8px;">新课</div>
+                    <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                        <img src="images/5f8821c308935e5406000338-360-202.jpg" style="width: 270px;height: 148px;">
+                        <div class="fucitiao">
+                            <label>Vue.js</label>
+                            <label>Typescript</label>
+                        </div>
+                    </div>
+                    <div style="padding: 8px;background-size: cover;">
+                        <h3 style="font-size: 16px;
+                        color: #07111B;
+                        line-height: 24px;
+                        overflow: hidden;
+                        font-weight: bold;
+                        height: 46px;">Vue3.0+TypeScript打造企业级组件库</h3>
+                        <div style="position: relative">
+                            <div
+                                style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                <span style="padding-right: 10px;">高级</span>
+                                <span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    14
+                                </span>
+                                <span style="float:right ;margin-right: 12px;">0人评价</span>
+                            </div>
+                            <div></div>
+                            <div style="color: #f01414;font-weight: bold;">
+                                ￥339.00
+                                <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                    限时特惠
+                                    <!-- <div id="remainSeconds" style="display: none;">235254</div>
+                                    <i id="remainTime"  style="font-style: normal;font-weight: 200;color: #F20D0D;"></i> -->
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div
+                style="float: left; width: 270px;height: 268px;position: relative;border-radius: 8px;padding-left: 24px;padding-top: 20px;">
+                <a href="#">
+                    <!-- <div class="biaoqian">新课</div> -->
+                    <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                        <img src="images/5f583a2609dc33b412000676-360-202.png" style="width: 270px;height: 148px;">
+                        <div class="fucitiao">
+                            <label>微服务</label>
+                            <label>Spring Cloud</label>
+                        </div>
+                    </div>
+                    <div style="padding: 8px;background-size: cover;">
+                        <h3 style="font-size: 16px;
+                        color: #07111B;
+                        line-height: 24px;
+                        overflow: hidden;
+                        font-weight: bold;
+                        height: 46px;">Spring Cloud分布式微服务实战，养成应对复杂业务的综合技术能力</h3>
+                        <div style="position: relative">
+                            <div
+                                style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                <span style="padding-right: 10px;">中级</span>
+                                <span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    168
+                                </span>
+                                <span style="float:right ;margin-right: 12px;">34人评价</span>
+                            </div>
+                            <div></div>
+                            <div style="color: #f01414;font-weight: bold;">
+                                ￥499.00
+                                <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                    限时特惠
+                                    <div id="remainSeconds" style="display: none;">235254</div>
+                                    <i id="remainTime"  style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                </span> -->
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div
+                style="float: left; width: 270px;height: 268px;position: relative;border-radius: 8px;padding-left: 24px;padding-top: 20px;">
+                <a href="#">
+                    <div class="biaoqian">新课</div>
+                    <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                        <img src="images/5f644966091d8ce512000676-360-202.png" style="width: 270px;height: 148px;">
+                        <div class="fucitiao">
+                            <label>PHP</label>
+                            <!-- <label>Typescript</label> -->
+                        </div>
+                    </div>
+                    <div style="padding: 8px;background-size: cover;">
+                        <h3 style="font-size: 16px;
+                        color: #07111B;
+                        line-height: 24px;
+                        overflow: hidden;
+                        font-weight: bold;
+                        height: 46px;">Laravel重构企业级电商项目</h3>
+                        <div style="position: relative">
+                            <div
+                                style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                <span style="padding-right: 10px;">中级</span>
+                                <span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    45
+                                </span>
+                                <span style="float:right ;margin-right: 12px;">2人评价</span>
+                            </div>
+                            <div></div>
+                            <div style="color: #f01414;font-weight: bold;">
+                                ￥388.00
+                                <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                    限时特惠
+                                    <!-- <div id="remainSeconds" style="display: none;">235254</div>
+                                    <i id="remainTime"  style="font-style: normal;font-weight: 200;color: #F20D0D;"></i> -->
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div
+                style="float: left; width: 270px;height: 268px;position: relative;border-radius: 8px;padding-left: 24px;padding-top: 20px;">
+                <a href="#">
+                    <div class="biaoqian" style="background-color: rebeccapurple;">升级</div>
+                    <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                        <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                        <div class="fucitiao">
+                            <label>Vue.js</label>
+                            <label>Typescript</label>
+                        </div>
+                    </div>
+                    <div style="padding: 8px;background-size: cover;">
+                        <h3 style="font-size: 16px;
+                        color: #07111B;
+                        line-height: 24px;
+                        overflow: hidden;
+                        font-weight: bold;
+                        height: 46px;">全面系统Python3.8入门+进阶 (程序员必备第二语言)</h3>
+                        <div style="position: relative">
+                            <div
+                                style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                <span style="padding-right: 10px;">初级</span>
+                                <span>
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    11989
+                                </span>
+                                <span style="float:right ;margin-right: 12px;">5928人评价</span>
+                            </div>
+                            <div></div>
+                            <div style="color: #f01414;font-weight: bold;">
+                                ￥366.00
+                                <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                    限时特惠
+                                    <div id="remainSeconds" style="display: none;">235254</div>
+                                    <i id="remainTime"  style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                </span> -->
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 学习路线 -->
+    <div id="xuexi" style="background-color:#fff !important;">
+        <div class="xuexi">
+            <h3>
+                <span style="position: relative;
+                float: left;
+                font-weight: bold;
+                font-size: 24px;
+                color: #1C1F21;
+                letter-spacing: 0px;
+                line-height: 32px;">学习路线</span>
+                <ul style="position: relative;
+                margin-top: 6px;
+                margin-left: 36px;
+                font-weight: normal;
+                font-size: 24px;
+                color: #1C1F21;
+                letter-spacing: 0px;
+                line-height: 32px;float: left;">
+                    <li id="btn1">热门</li>
+                    <li id="btn2">前端</li>
+                    <li id="btn3">后端</li>
+                    <li id="btn4">移动端</li>
+                    <li id="btn5">计算机基础</li>
+                    <li id="btn6">大数据</li>
+                    <li id="btn7">测试</li>
+                    <li id="btn8">人工智能</li>
+                </ul>
+                <a href="#" style="float: right;
+                margin-top: 2px;
+                line-height: 24px;
+                color: #1C1F21;
+                font-size: 14px;
+                font-weight: normal;
+                position: relative;
+                top: -4px;">
+                    查看更多
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </h3>
+            <div class="weixinkecheng" id="hot" style="display: block;">
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5d8b21f2088cf47501400140-140-140.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5d8b21f2088cf47501400140-140-140.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5d8b21f2088cf47501400140-140-140.jpg)"></div>
+                        </div>
+                        <h4>Vue.js 从入门到精通（含Vue3.0正式版）</h4>
+                        <p>路线专为想学Vue却无从下手的人群设计，以实际项目为例，逐层深入，学透Vue。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                3步骤 · 3门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                19115人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da92726082156e501400140-140-140.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da92726082156e501400140-140-140.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da92726082156e501400140-140-140.jpg)"></div>
+                        </div>
+                        <h4>前端面试求职跳槽通关路线</h4>
+                        <p>路线伴随Web前端工程师一路成长，彻底搞懂不同阶段的面试重点，高效拿下offer。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                3步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5d919e87087c044201400140-140-140.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5d919e87087c044201400140-140-140.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5d919e87087c044201400140-140-140.jpg)"></div>
+                        </div>
+                        <h4>Go语言从入门到达人之路</h4>
+                        <p>零基础入门Go语言，在掌握基础语法后向并发提升，并用Go去构建微服务、上手区块链项目。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 4门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                9591人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="weixinkecheng" id="qianduan" style="display:none;">
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da13891095e973101400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da13891095e973101400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da13891095e973101400140-140-140.png)"></div>
+                        </div>
+                        <h4>Node.js 零基础从入门到玩转 </h4>
+                        <p>本路线从Node.js基础到热门框架应用，从理解到实战一步到位。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da92726082156e501400140-140-140.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da92726082156e501400140-140-140.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da92726082156e501400140-140-140.jpg)"></div>
+                        </div>
+                        <h4>前端面试求职跳槽通关路线</h4>
+                        <p>路线伴随Web前端工程师一路成长，彻底搞懂不同阶段的面试重点，高效拿下offer。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                3步骤 · 4门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                9591人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5db92a1a080f03a301400140-140-140.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5db92a1a080f03a301400140-140-140.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5db92a1a080f03a301400140-140-140.jpg)"></div>
+                        </div>
+                        <h4>Vue.js从入门到全栈开发</h4>
+                        <p>优秀的前端工程师都要掌握一门后端语言，从vue到node，前后端通吃，提高前端工程师的竞争力。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="weixinkecheng" id="houduan" style="display:none;">
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5e1c16b409df50e701400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5e1c16b409df50e701400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5e1c16b409df50e701400140-140-140.png)"></div>
+                        </div>
+                        <h4>Java Web电商前后端与全流程进阶之路</h4>
+                        <p>以Java和vue为技术栈，覆盖数据库-后端-前端完整电商业务，遵循企业级流程，进军全栈工程师。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                3步骤 · 3门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                1771人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5dd6093808a0ecae01400140-140-140.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5dd6093808a0ecae01400140-140-140.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5dd6093808a0ecae01400140-140-140.jpg)"></div>
+                        </div>
+                        <h4>从零开始，实现Python Flask入门到高阶</h4>
+                        <p>路线专为零Flask基础的学员定制，我们从Flask最基础的框架开始到多种热门项目实战，层层深入，一站式教程，助你熟练掌握Flask 核心开发。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 4门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                2907人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5db28dd409f7688701400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5db28dd409f7688701400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5db28dd409f7688701400140-140-140.png)"></div>
+                        </div>
+                        <h4>从零开始  一站搞定Python Django开发 </h4>
+                        <p>路线专为零Django基础学员定制，层层深入，助你熟练掌握Django应用技能。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 4门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                2619人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5db28df7090aeec301400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5db28df7090aeec301400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5db28df7090aeec301400140-140-140.png)"></div>
+                        </div>
+                        <h4>Python高薪工程师精进路线</h4>
+                        <p>专为Pythoner进阶高薪定制，从高级语法到主流框架再到源码，系统提升高薪技能。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                3步骤 · 4门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                2958人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="weixinkecheng" id="yidong" style="display:none;">
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5db28df7090aeec301400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5db28df7090aeec301400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5db28df7090aeec301400140-140-140.png)"></div>
+                        </div>
+                        <h4>Java Web电商前后端与全流程进阶之路</h4>
+                        <p>以Java和vue为技术栈，覆盖数据库-后端-前端完整电商业务，遵循企业级流程，进军全栈工程师。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5d8b22e4080de9a601400140-140-140.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5d8b22e4080de9a601400140-140-140.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5d8b22e4080de9a601400140-140-140.jpg)"></div>
+                        </div>
+                        <h4>Android工程师升职加薪之路</h4>
+                        <p>涵盖初中高级Android工程师的升职加薪关键技术，带你突破晋升过程中的技术瓶颈。聚合热门技术  &gt;  系统掌握Jetpack  &gt;  向架构师进阶。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5e98339809ac343012000676-360-202.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5e98339809ac343012000676-360-202.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5e98339809ac343012000676-360-202.png)"></div>
+                        </div>
+                        <h4>大学计算机专业数学学习路线</h4>
+                        <p>提升编程内功，精选程序员必修的数学基础课，带你打好人工智能等领域的数学基础。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="weixinkecheng" id="jisuanji" style="display:none;">
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5eddd7aa09cfdb1c12000676-360-202.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5eddd7aa09cfdb1c12000676-360-202.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5eddd7aa09cfdb1c12000676-360-202.png)"></div>
+                        </div>
+                        <h4>大学计算机专业数学学习路线</h4>
+                        <p>提升编程内功，精选程序员必修的数学基础课，带你打好人工智能等领域的数学基础。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5d8b22e4080de9a601400140-140-140.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5d8b22e4080de9a601400140-140-140.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5d8b22e4080de9a601400140-140-140.jpg)"></div>
+                        </div>
+                        <h4>计算机基础学习路线</h4>
+                        <p>本路线精选程序员必修的计算机基础核心知识，有序打基础职场走更远。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5d8b2a0608bd096301400140-140-140.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5d8b2a0608bd096301400140-140-140.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5d8b2a0608bd096301400140-140-140.jpg)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="weixinkecheng" id="data" style="display:none;">
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5f65f20c08d369bb06000338-360-202.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5f65f20c08d369bb06000338-360-202.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5f65f20c08d369bb06000338-360-202.jpg)"></div>
+                        </div>
+                        <h4>大数据零基础入门求职路线</h4>
+                        <p>路线面向零基础用户，从入门到实现大数据综合实战，助力大家快速入行转型！</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/53d068840001a89906000338-360-202.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/53d068840001a89906000338-360-202.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/53d068840001a89906000338-360-202.jpg)"></div>
+                        </div>
+                        <h4>大数据容器化实践从入门到进阶</h4>
+                        <p>本路线以开发者的视角逐层深入，从语言基础开始，到最终完成企业级应用容器化部署。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5c60f2e80984689c05400300-360-202.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5c60f2e80984689c05400300-360-202.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5c60f2e80984689c05400300-360-202.png)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5c17445b0001fd8d05400300-360-202.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5c17445b0001fd8d05400300-360-202.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5c17445b0001fd8d05400300-360-202.jpg)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="weixinkecheng" id="ceshi" style="display:none;">
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5c19b3060001e4fd06000338-360-202.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5c19b3060001e4fd06000338-360-202.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5c19b3060001e4fd06000338-360-202.jpg)"></div>
+                        </div>
+                        <h4>Java功能测试转型自动化测试之路</h4>
+                        <p>专为想要转型的Java功能测试人群设计，系统吃透自动化测试的知识点。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="weixinkecheng" id="AI" style="display:none;">
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5d1032ab08719e0906000338-360-202.jpg)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5d1032ab08719e0906000338-360-202.jpg)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5d1032ab08719e0906000338-360-202.jpg)"></div>
+                        </div>
+                        <h4>从0入门人工智能学习</h4>
+                        <p>路线面向0基础用户，从最基础的开发语言Python学起，带你进入人工智能的世界。</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-right: 20px;
+                margin-bottom: 24px;
+                width: 564px;
+                height: 148px;
+                background-size: cover;">
+                    <a href="#">
+                        <div class="img">
+                            <div class="images-up"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-mid"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                            <div class="images-down"
+                                style="background-image: url(images/5da9a00d09eeecba01400140-140-140.png)"></div>
+                        </div>
+                        <h4>微信小程序从0基础到精通</h4>
+                        <p>一站式掌握小程序生态，打造站内零基础精通小程序的最佳路径</p>
+                        <div style="margin-left: 164px;
+                        font-size: 12px;
+                        color: #9199A1;
+                        height: 18px;
+                        line-height: 18px;">
+                            <span>
+                                4步骤 · 5门课
+                            </span>
+                            <span style="margin-left: 164px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            height: 18px;
+                            line-height: 18px;">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                22575人收藏
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- 热门课程 -->
+    <div id="remen" style="background-color: #F3F5F6;">
+        <div class="remen">
+            <h3>
+                <span style="position: relative;
+                float: left;
+                font-weight: bold;
+                font-size: 24px;
+                color: #1C1F21;
+                letter-spacing: 0px;
+                line-height: 32px;">学习路线</span>
+                <ul style="position: relative;
+                margin-top: 6px;
+                margin-left: 36px;
+                font-weight: normal;
+                font-size: 24px;
+                color: #1C1F21;
+                letter-spacing: 0px;
+                line-height: 32px;float: left;">
+                    <li id="btu1">实战课程</li>
+                    <li id="btu2">免费课程</li>
+                </ul>
+            </h3>
+            <div id="yemian1" style="width: 1152px;margin: auto;display: block">
+                <div style="float: left;
+                
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px; background-color: blueviolet;">升级</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5ac2dfe100014a9005400300-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <!-- <label>Typescript</label> -->
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue2.5开发去哪儿网App 从零基础入门到实战项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;background-color: blueviolet;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5d1032ab08719e0906000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Linux</label>
+                                <label>计算机网络</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">编程必备基础 计算机组成原理+操作系统+计算机网络</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;background-color: blueviolet;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5eddd7aa09cfdb1c12000676-360-202.png" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Javascript</label>
+                                <!-- <label>Typescript</label> -->
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">快速搞定前端技术一面 匹配大厂面试要求</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;background-color: blueviolet;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5e3cfea008e9a61b06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">前端框架及项目面试 聚焦Vue3/React/Webpack</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;background-color: blueviolet;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            
+            
+            </div>
+            <div id="yemian2" style="width: 1152px;margin: auto;display: none">
+                <div style="float: left;
+                
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div style="float: left;
+                margin-left: 24px;
+                border-radius: 4px;
+                margin-bottom: 12px;
+                width: 270px;
+                height: 268px;
+                position: relative;">
+                    <a href="#">
+                        <div class="biaoqian" style="left: -8px;">新课</div>
+                        <div style="width: 270px;height: 148px;position: relative;border-radius: 8px;">
+                            <img src="images/5f65f20c08d369bb06000338-360-202.jpg" style="width: 270px;height: 148px;">
+                            <div class="fucitiao">
+                                <label>Vue.js</label>
+                                <label>Typescript</label>
+                            </div>
+                        </div>
+                        <div style="padding: 8px;background-size: cover;">
+                            <h3 style="font-size: 16px;
+                            color: #07111B;
+                            line-height: 24px;
+                            overflow: hidden;
+                            font-weight: bold;
+                            height: 46px;
+                            width: 254px;
+                            margin-block-start: 1em;
+                            margin-block-end: 1em;
+                            margin-inline-start: 0px;
+                            margin-inline-end: 0px;">Vue3.0（正式版） + TS 仿知乎专栏企业级项目</h3>
+                            <div style="position: relative">
+                                <div
+                                    style="font-size: 12px;color: #9199A1;line-height: 18px; margin-top: 4px;font-weight: 400;">
+                                    <span style="padding-right: 10px;">中级</span>
+                                    <span>
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                        547221
+                                    </span>
+                                    <span style="float:right ;margin-right: 12px;">3333人评价</span>
+                                </div>
+                                <div></div>
+                                <div style="color: #f01414;font-weight: bold;">
+                                    ￥298.00
+                                    <!-- <span style="box-sizing: border-box;background: rgba(242, 13, 13, 0.08);border-radius: 2px;font-weight: 200;
+                                    color: #F20D0D;padding: 0 4px;display: inline-block;font-size: 12px;">
+                                        限时特惠
+                                        <div id="remainSeconds" style="display: none;">235254</div>
+                                        <i id="remainTime"
+                                            style="font-style: normal;font-weight: 200;color: #F20D0D;"></i>
+                                    </span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            
+            
+            </div>
+        </div>
+    </div>
+    <!-- 慕课专栏 -->
+    <div id="muke" style="background-color: #fff;">
+        <div class="muke">
+            <h3 style="height: 32px;">
+                <span style="position: relative;
+                float: left;
+                font-weight: bold;
+                font-size: 24px;
+                color: #1C1F21;
+                letter-spacing: 0px;
+                line-height: 32px;">慕课专栏</span>
+                <a href="#" style="float: right;
+                margin-top: 2px;
+                line-height: 24px;
+                color: #1C1F21;
+                font-size: 14px;
+                font-weight: normal;
+                position: relative;
+                top: -4px;">
+                    查看更多
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </h3>
+            <div class="mukecheng">
+                <div class="mukecheng-book">
+                    <div style="float: left;
+                    position: relative;">
+                        <a href="#">
+                            <img style="height: 118px;
+                            width: 104px;" src="images/5ed8c19b000108e602940333.jpg" >
+                            <div>试读</div>
+                        </a>
+                    </div>
+                    <h4>MySQL 开发高频面试题精选</h4>
+                    <div style="margin-left: 112px;
+                    padding: 10px 0;
+                    font-size: 12px;
+                    color: #9199A1;
+                    text-align: left;
+                    line-height: 14px;
+                    border-bottom: 1px solid rgba(28, 31, 33, 0.1);">
+                        <span style="font-size: 12px;
+                        color: #9199A1;
+                        text-align: left;
+                        line-height: 14px;">
+                            共25节 · 97人已购买
+                        </span>
+                    </div>
+                    <div style="margin: 10px 0;
+                    margin-left: 112px;
+                    font-size: 12px;
+                    color: #1C1F21;
+                    text-align: left;
+                    line-height: 16px;
+                    overflow: hidden;
+                    height: 16px;
+                    text-overflow: ellipsis;">
+                        <a href="#">
+                            <span style="font-weight: bold;">
+                                门牙没了
+                            </span>
+                            / 一线大厂数据架构师
+                        </a>
+                    </div>
+                    <div style="margin-left: 112px;
+                    margin-top: 17px;
+                    position: relative;">
+                        <a href="#">
+                            <span style="font-size: 16px;
+                            color: #3377FF;
+                            text-align: left;
+                            line-height: 32px;
+                            font-weight: bold;">¥ 36.00</span>
+                            <span style="margin-left: 8px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            text-align: left;
+                            line-height: 30px;
+                            text-decoration: line-through;">原价 ¥ 48.00</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="mukecheng-book">
+                    <div style="float: left;
+                    position: relative;">
+                        <a href="#">
+                            <img style="height: 118px;
+                            width: 104px;" src="images/5eb68ac10001029202940333.jpg" >
+                            <div>试读</div>
+                        </a>
+                    </div>
+                    <h4>改善Go语言编程质量的50个有效实践</h4>
+                    <div style="margin-left: 112px;
+                    padding: 10px 0;
+                    font-size: 12px;
+                    color: #9199A1;
+                    text-align: left;
+                    line-height: 14px;
+                    border-bottom: 1px solid rgba(28, 31, 33, 0.1);">
+                        <span style="font-size: 12px;
+                        color: #9199A1;
+                        text-align: left;
+                        line-height: 14px;">
+                            共25节 · 97人已购买
+                        </span>
+                    </div>
+                    <div style="margin: 10px 0;
+                    margin-left: 112px;
+                    font-size: 12px;
+                    color: #1C1F21;
+                    text-align: left;
+                    line-height: 16px;
+                    overflow: hidden;
+                    height: 16px;
+                    text-overflow: ellipsis;">
+                        <a href="#">
+                            <span style="font-weight: bold;">
+                                门牙没了
+                            </span>
+                            / 一线大厂数据架构师
+                        </a>
+                    </div>
+                    <div style="margin-left: 112px;
+                    margin-top: 17px;
+                    position: relative;">
+                        <a href="#">
+                            <span style="font-size: 16px;
+                            color: #3377FF;
+                            text-align: left;
+                            line-height: 32px;
+                            font-weight: bold;">¥ 36.00</span>
+                            <span style="margin-left: 8px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            text-align: left;
+                            line-height: 30px;
+                            text-decoration: line-through;">原价 ¥ 48.00</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="mukecheng-book">
+                    <div style="float: left;
+                    position: relative;">
+                        <a href="#">
+                            <img style="height: 118px;
+                            width: 104px;" src="images/5f2d03d70001d0d602940333.jpg" >
+                            <div>试读</div>
+                        </a>
+                    </div>
+                    <h4>剖析 React 内部运行机制</h4>
+                    <div style="margin-left: 112px;
+                    padding: 10px 0;
+                    font-size: 12px;
+                    color: #9199A1;
+                    text-align: left;
+                    line-height: 14px;
+                    border-bottom: 1px solid rgba(28, 31, 33, 0.1);">
+                        <span style="font-size: 12px;
+                        color: #9199A1;
+                        text-align: left;
+                        line-height: 14px;">
+                            共25节 · 97人已购买
+                        </span>
+                    </div>
+                    <div style="margin: 10px 0;
+                    margin-left: 112px;
+                    font-size: 12px;
+                    color: #1C1F21;
+                    text-align: left;
+                    line-height: 16px;
+                    overflow: hidden;
+                    height: 16px;
+                    text-overflow: ellipsis;">
+                        <a href="#">
+                            <span style="font-weight: bold;">
+                                门牙没了
+                            </span>
+                            / 一线大厂数据架构师
+                        </a>
+                    </div>
+                    <div style="margin-left: 112px;
+                    margin-top: 17px;
+                    position: relative;">
+                        <a href="#">
+                            <span style="font-size: 16px;
+                            color: #3377FF;
+                            text-align: left;
+                            line-height: 32px;
+                            font-weight: bold;">¥ 36.00</span>
+                            <span style="margin-left: 8px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            text-align: left;
+                            line-height: 30px;
+                            text-decoration: line-through;">原价 ¥ 48.00</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="mukecheng-book">
+                    <div style="float: left;
+                    position: relative;">
+                        <a href="#">
+                            <img style="height: 118px;
+                            width: 104px;" src="images/5ed8c19b000108e602940333.jpg" >
+                            <div>试读</div>
+                        </a>
+                    </div>
+                    <h4>MySQL 开发高频面试题精选</h4>
+                    <div style="margin-left: 112px;
+                    padding: 10px 0;
+                    font-size: 12px;
+                    color: #9199A1;
+                    text-align: left;
+                    line-height: 14px;
+                    border-bottom: 1px solid rgba(28, 31, 33, 0.1);">
+                        <span style="font-size: 12px;
+                        color: #9199A1;
+                        text-align: left;
+                        line-height: 14px;">
+                            共25节 · 97人已购买
+                        </span>
+                    </div>
+                    <div style="margin: 10px 0;
+                    margin-left: 112px;
+                    font-size: 12px;
+                    color: #1C1F21;
+                    text-align: left;
+                    line-height: 16px;
+                    overflow: hidden;
+                    height: 16px;
+                    text-overflow: ellipsis;">
+                        <a href="#">
+                            <span style="font-weight: bold;">
+                                1111
+                            </span>
+                            / 一线大厂数据架构师
+                        </a>
+                    </div>
+                    <div style="margin-left: 112px;
+                    margin-top: 17px;
+                    position: relative;">
+                        <a href="#">
+                            <span style="font-size: 16px;
+                            color: #3377FF;
+                            text-align: left;
+                            line-height: 32px;
+                            font-weight: bold;">¥ 36.00</span>
+                            <span style="margin-left: 8px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            text-align: left;
+                            line-height: 30px;
+                            text-decoration: line-through;">原价 ¥ 48.00</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="mukecheng-book">
+                    <div style="float: left;
+                    position: relative;">
+                        <a href="#">
+                            <img style="height: 118px;
+                            width: 104px;" src="images/5ed8c19b000108e602940333.jpg" >
+                            <div>试读</div>
+                        </a>
+                    </div>
+                    <h4>MySQL 开发高频面试题精选</h4>
+                    <div style="margin-left: 112px;
+                    padding: 10px 0;
+                    font-size: 12px;
+                    color: #9199A1;
+                    text-align: left;
+                    line-height: 14px;
+                    border-bottom: 1px solid rgba(28, 31, 33, 0.1);">
+                        <span style="font-size: 12px;
+                        color: #9199A1;
+                        text-align: left;
+                        line-height: 14px;">
+                            共25节 · 97人已购买
+                        </span>
+                    </div>
+                    <div style="margin: 10px 0;
+                    margin-left: 112px;
+                    font-size: 12px;
+                    color: #1C1F21;
+                    text-align: left;
+                    line-height: 16px;
+                    overflow: hidden;
+                    height: 16px;
+                    text-overflow: ellipsis;">
+                        <a href="#">
+                            <span style="font-weight: bold;">
+                                门牙没了
+                            </span>
+                            / 一线大厂数据架构师
+                        </a>
+                    </div>
+                    <div style="margin-left: 112px;
+                    margin-top: 17px;
+                    position: relative;">
+                        <a href="#">
+                            <span style="font-size: 16px;
+                            color: #3377FF;
+                            text-align: left;
+                            line-height: 32px;
+                            font-weight: bold;">¥ 36.00</span>
+                            <span style="margin-left: 8px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            text-align: left;
+                            line-height: 30px;
+                            text-decoration: line-through;">原价 ¥ 48.00</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="mukecheng-book">
+                    <div style="float: left;
+                    position: relative;">
+                        <a href="#">
+                            <img style="height: 118px;
+                            width: 104px;" src="images/5ed8c19b000108e602940333.jpg" >
+                            <div>试读</div>
+                        </a>
+                    </div>
+                    <h4>MySQL 开发高频面试题精选</h4>
+                    <div style="margin-left: 112px;
+                    padding: 10px 0;
+                    font-size: 12px;
+                    color: #9199A1;
+                    text-align: left;
+                    line-height: 14px;
+                    border-bottom: 1px solid rgba(28, 31, 33, 0.1);">
+                        <span style="font-size: 12px;
+                        color: #9199A1;
+                        text-align: left;
+                        line-height: 14px;">
+                            共25节 · 97人已购买
+                        </span>
+                    </div>
+                    <div style="margin: 10px 0;
+                    margin-left: 112px;
+                    font-size: 12px;
+                    color: #1C1F21;
+                    text-align: left;
+                    line-height: 16px;
+                    overflow: hidden;
+                    height: 16px;
+                    text-overflow: ellipsis;">
+                        <a href="#">
+                            <span style="font-weight: bold;">
+                                门牙没了
+                            </span>
+                            / 一线大厂数据架构师
+                        </a>
+                    </div>
+                    <div style="margin-left: 112px;
+                    margin-top: 17px;
+                    position: relative;">
+                        <a href="#">
+                            <span style="font-size: 16px;
+                            color: #3377FF;
+                            text-align: left;
+                            line-height: 32px;
+                            font-weight: bold;">¥ 36.00</span>
+                            <span style="margin-left: 8px;
+                            font-size: 12px;
+                            color: #9199A1;
+                            text-align: left;
+                            line-height: 30px;
+                            text-decoration: line-through;">原价 ¥ 48.00</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 页脚 -->
+    <div style="padding: 36px 0;background-color: #F3F5F6;">
+        <div style="position: relative;width: 1152px;margin: 0 auto">
+            <div style="position: absolute;
+            width: auto;
+            right: 0;
+            bottom: 0;">
+                <div style="width: 142px;height: 60px;">
+                    <div style="float: left;text-align: center;margin-right: 32px;height: 60px;width: 60px;">
+                        <a href="#" style="display: inline-block;
+                        height: 32px;
+                        width: 32px;
+                        vertical-align: middle;
+                        background-repeat: no-repeat;
+                        margin: 0 9px;"><i class="fa fa-weixin" aria-hidden="true"></i></a>
+                        <p style="font-size: 12px;
+                        color: #4D555D;
+                        line-height: 24px;">官方公众号</p>
+                    </div>
+                    <div style="float: left;text-align: center;">
+                        <a href="#" style="display: inline-block;
+                        height: 32px;
+                        width: 32px;
+                        vertical-align: middle;
+                        background-repeat: no-repeat;
+                        margin: 0 9px;"><i class="fa fa-weibo" aria-hidden="true"></i></a>
+                        <p style="font-size: 12px;
+                        color: #4D555D;
+                        line-height: 24px;">官方微博</p>
+                    </div>
+                </div>
+            </div>
+            <div class="yejiao" style="font-size: 14px;
+            margin: 0 auto;
+            text-align: left;
+            border: none;
+            padding: 0;">
+                <a href="#">企业服务</a>
+                <a href="#">人才招聘</a>
+                <a href="#">联系我们</a>
+                <a href="#">讲师招募</a>
+                <a href="#">帮助中心</a>
+                <a href="#">意见反馈</a>
+                <a href="#">慕课大学</a>
+                <a href="#">代码托管</a>
+                <a href="#">友情链接</a>
+            </div>
+            <div style="margin-top: 10px;">
+                <p style=" font-size: 12px;
+                color: #93999F;
+                line-height: 24px;
+                text-align: left;">
+                    <img src="images/a9.png">&nbsp; 2020 &nbsp;imooc.com &nbsp;&nbsp;  京ICP备 12003892号-11 
+                    <a href="#" style="color: #93999F;
+                    font-size: 12px;
+                    margin: 0 5px !important;
+                    display: inline-block;
+                    width: 200px;
+                    height: 28px;">
+                        <i class="beian"></i>
+                        京公网安备11010802030151号
+                    </a>
+                    <a href="#" style="display: inline-block;
+                    line-height: 28px;
+                    color: #93999F;
+                    margin: 0;
+                    margin-right: 36px;">营业执照</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
